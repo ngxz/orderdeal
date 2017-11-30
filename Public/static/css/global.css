@@ -1,9 +1,15 @@
 /*reset*/
 *{margin: 0;padding: 0;}
-ul li ol li{list-style: none;}
+body{font-family: "微软雅黑";}
+ul,li,ol{list-style: none;}
 a{text-decoration: none;color:#000;}
 a:focus{outline:none;}
 img{border: none;}
+input{outline: none;}
+::-webkit-input-placeholder{color:#999;font-family: "微软雅黑";}
+:-moz-placeholder {color:#999;font-family: "微软雅黑";}
+::-moz-placeholder {color:#999;font-family: "微软雅黑";}
+:-ms-input-placeholder {color:#999;font-family: "微软雅黑";}
 
 .left{float: left;}
 .right{float: right;}

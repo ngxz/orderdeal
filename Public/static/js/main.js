@@ -2,7 +2,7 @@
 function refreshRem(){
     var docEl = window.document.documentElement;
     var width = parseInt($(window).width());
-    var rootSize = width/20;
+    var rootSize = width/24;
     docEl.style.fontSize = rootSize + 'px';
 }
 

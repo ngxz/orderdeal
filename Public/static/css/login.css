@@ -1,0 +1,21 @@
+body{background-color: #f5f5fa;}
+/*顶部和头像*/
+.title{height: 3rem;color: #fff;background-color: #eb6435;text-align: center;line-height:3rem;}
+.userIcon{height: 10rem;text-align: center;}
+.userIcon img{height: 6rem;border-radius: 3rem;margin-top: 2.5rem;}
+
+/*表单*/
+.loginForm input{border: none;}
+.phoneBox{position: relative;}
+.pwdBox{position: relative;}
+.phoneBox img{height: 1.5em;position: absolute;left: 0.4rem;top: 0.6rem;}
+.pwdBox img{height: 1.5em;position: absolute;left: 0.4rem;top: 0.6rem;}
+.phoneBox input{height: 2.8rem;width: 100%;padding-left: 3.5em;border-top:1px solid #c7c8ce;background-color:#fafafa;}
+.pwdBox input{height: 2.8rem;width: 100%;padding-left: 3.5em;border-top:1px solid #c7c8ce;border-bottom:1px solid #c7c8ce;background-color:#fafafa;}
+
+.text{margin:1rem;color: #434342;}
+.text a{color: #434342;}
+.text input{margin-top: 0.3rem;margin-right: 0.3rem;}
+
+.loginBtn{text-align: center;}
+.loginBtn input{height: 2.8rem;width: 20rem;background-color: #EB6435;color: #fff;font-size: 1.2rem;border-radius: 0.5rem;}

@@ -1,0 +1,19 @@
+.logoBox{height: 20rem;background-color: #EB6435;}
+.logo{text-align: center;}
+.logo img{height: 8rem;margin: 4.5rem auto;}
+
+.searchForm form{position: relative;text-align: center;}
+.searchForm img{height: 1.4rem;color: #C2C2C2;position: absolute;left: 1.6rem;top: 0.3rem;}
+.searchForm input{height: 2rem;width: 20rem;border: none;border-radius: 1rem;padding-left: 2.5rem;}
+
+/*菜单按钮*/
+.menusBox ul{overflow: hidden;}
+.menusBox ul li{width: 33.33%;margin-top: 2rem;float: left;text-align: center;}
+.menusBox ul li span{display: block;}
+
+/*底部按钮*/
+.toolBar{background-color: #f8f8f8;width: 100%;border-top: 1px solid #ccc;position: absolute;bottom: 0;}
+.toolBar ul{overflow: hidden;}
+.toolBar ul li{width: 33.33%;margin: 0.5rem 0;float: left;text-align: center;}
+.toolBar ul li a img{height: 2rem;}
+.toolBar ul li span{display: block;}
