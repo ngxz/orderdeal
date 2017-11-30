@@ -1,0 +1,9 @@
+/*reset*/
+*{margin: 0;padding: 0;}
+ul li ol li{list-style: none;}
+a{text-decoration: none;color:#000;}
+a:focus{outline:none;}
+img{border: none;}
+
+.left{float: left;}
+.right{float: right;}
