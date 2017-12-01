@@ -7,7 +7,7 @@ body{background-color: #eee;}
 .navBox ul li:last-child{border-right: none;}
 .active{border-bottom:2px solid red;}
 /*订单列表*/
-.orderList{margin: 0.5rem auto;}
+.orderList{margin: 0.5rem auto;height: 31rem;overflow: auto;}
 .orderList ul li{margin-top: 0.6rem;background-color: #fff;}
 /*编号*/
 .order_no{width: 98%;margin: 0 auto;overflow: hidden;height: 2.5rem;line-height: 2.5rem;}

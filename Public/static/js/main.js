@@ -18,3 +18,13 @@ $(function(){
         resize();
     });
 });
+//弹出函数，传入信息
+function layers(msg){
+	layer.open({
+		    content: msg,
+		    skin: 'msg',
+		    time: 2 ,
+		    fixed:false,
+		    top:-200
+		});
+}

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>订单查询</title>
-		<meta content="target-densityDpi=device-dpi,width=device-width, initial-scale=1, maximum-scale=1.2, user-scalable=0" name="viewport" />
+		<meta content="target-densityDpi=device-dpi,initial-scale=1, maximum-scale=1.2, user-scalable=0" name="viewport" />
 		<link rel="stylesheet" href="__PUBLIC__/static/css/global.css" />
 		<link rel="stylesheet" href="__PUBLIC__/static/css/ordersearch.css" />
 	</head>
@@ -11,9 +11,9 @@
 		<div class="title">订单查询</div>
 		<div class="navBox">
 			<ul>
-				<li><a href="#">已发货</a></li>
+				<li><a href="#">已完成</a></li>
 				<li class="active"><a href="#">未发货</a></li>
-				<li><a href="#">拒单</a></li>
+				<li><a href="#">已失效</a></li>
 			</ul>
 		</div>
 		<div class="orderList">
@@ -84,6 +84,7 @@
 				</li>
 			</ul>
 		</div>
+		<include file='./Application/Home/View/Public/_footer.html' />
 	</body>
 	<script type="text/javascript" src="__PUBLIC__/static/js/jquery-1.9.1.min.js" ></script>
 	<script type="text/javascript" src="__PUBLIC__/static/js/main.js" ></script>

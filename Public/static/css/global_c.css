@@ -129,3 +129,14 @@ footer{display: block;padding: 0;margin: 0;position: absolute;right: 0;left: 0; 
 .top{background-color: #EB6435;}
 .row .col-50{background-color: #EB6435;}
 #details{background-color: #EB6435;}
+.row_01 .col-32 .contrast p{text-align: center;}
+.row_01 .col-32 .number{color: #EB6435;}
+/*修改滚动*/
+.list-block{height: 17rem;overflow: auto;}
+.list-block ul{margin-bottom: 1rem;}
+/*底部按钮*/
+#toolBar{height: 4rem;background-color: #f8f8f8;width: 100%;border-top: 1px solid #ccc;position: absolute;bottom: 0;}
+#toolBar ul{overflow: hidden;}
+#toolBar ul li{width: 33.33%;margin: 0.5rem 0;float: left;text-align: center;}
+#toolBar ul li a img{height: 2rem;}
+#toolBar ul li span{display: block;}
