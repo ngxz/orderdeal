@@ -1,8 +1,11 @@
 <?php
 namespace Home\Controller;
 
-use Think\Controller;
-class IncomeController extends Controller{
+use Home\Controller\PublicController;
+class IncomeController extends PublicController{
+    public function _initialize(){
+        parent::_initialize();
+    }
     /**
      * 所有门店收益
      */

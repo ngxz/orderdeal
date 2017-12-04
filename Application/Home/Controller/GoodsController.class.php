@@ -1,8 +1,11 @@
 <?php
 namespace Home\Controller;
 
-use Think\Controller;
-class GoodsController extends Controller{
+use Home\Controller\PublicController;
+class GoodsController extends PublicController{
+    public function _initialize(){
+        parent::_initialize();
+    }
     /**
      * 商品列表
      */

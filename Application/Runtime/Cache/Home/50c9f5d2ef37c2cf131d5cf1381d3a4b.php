@@ -35,16 +35,6 @@
 	<script type="text/javascript" src="/orderDeal/Public/static/js/main.js" ></script>
 	<script type="text/javascript" src="/orderDeal/Public/static/js/layer.js" ></script>
 	<script type="text/javascript">
-		//弹出
-		function layers(msg){
-			layer.open({
-				    content: msg,
-				    skin: 'msg',
-				    time: 2 ,
-				    fixed:false,
-				    top:-200
-				});
-		}
 		//提交
 		$("input[type=button]").bind('click',function(){
 			var phone = $('input[name=phone]').val();
@@ -57,7 +47,7 @@
 				layers('密码不能为空哦！');
 				return false;
 			}
-			var url = '';
+			var url = '/orderDeal/Home/Login/login';
 			var data = {};
 			data['phone'] = $('input[name=phone]').val();
 			data['pwd'] = $('input[name=pwd]').val();

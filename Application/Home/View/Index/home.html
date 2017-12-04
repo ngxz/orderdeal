@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>系统首页</title>
-		<meta content="target-densityDpi=device-dpi,width=device-width, initial-scale=1, maximum-scale=1.2, user-scalable=0" name="viewport" />
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1.2, user-scalable=0" name="viewport" />
 		<link rel="stylesheet" href="__PUBLIC__/static/css/global.css" />
 		<link rel="stylesheet" href="__PUBLIC__/static/css/home.css" />
 	</head>
@@ -13,7 +13,7 @@
 			<div class="searchForm">
 				<form>
 					<img src="__PUBLIC__/static/img/search.png" />
-					<input type="text" placeholder="输入日期直接查询" />
+					<input type="text" name="search" placeholder="输入日期直接查询" value="" />
 				</form>
 			</div>
 		</div>
@@ -44,4 +44,12 @@
 	<script type="text/javascript" src="__PUBLIC__/static/js/jquery-1.9.1.min.js" ></script>
 	<script type="text/javascript" src="__PUBLIC__/static/js/main.js" ></script>
 	<script type="text/javascript" src="__PUBLIC__/static/js/layer.js" ></script>
+	<script type="text/javascript">
+		$("input[name=search]").change(function(){
+			var val = $(this).val();
+			alert(val);
+			//提交搜索
+			
+		});
+	</script>
 </html>

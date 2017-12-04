@@ -1,0 +1,48 @@
+.title{height: 3rem;color: #fff;background-color: #eb6435;text-align: center;line-height:3rem;}
+/*top/row*/
+.top{display:block;width:100%;height:5rem; margin:0 auto;padding:0;overflow:hidden; border:none;background-color: #eb6435; color:#fff;
+}
+.top h1{ line-height:3rem; font-size:1.2rem; width:100%; text-align:center; font-weight:200;}
+.top p{ color:#fff;width:100%; text-align:center;}
+
+.row {width: 100%;margin:0 auto;overflow: hidden;}
+.numbox {width: 95%;margin: 0 auto; height:3.5rem; overflow:hidden;}
+.personcount{width: 50%;background-color: #eb6435;height:6rem; color:#fff;text-align:center;border-top:1px #fa8080 solid;}
+.ordercount{width: 50%;background-color: #eb6435;height: 6rem; color:#fff;text-align: center;border-top:1px #fa8080 solid;}
+.numbox {width: 95%;margin: 0 auto; height:3.0rem; overflow:hidden;}
+.numbox p {text-align: center;font-size: 1rem;line-height: 3.0rem;}
+.numbox p span {text-align: center;font-size: 1.2rem;line-height: 2.5rem; text-align:center;}
+/*列表*/
+.content{height: 23.5rem;overflow: scroll;}
+.item-inner {
+	height: 4rem;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	padding: 0.5rem;
+	min-height: 2.0rem;
+	overflow: hidden;
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.7)
+}
+.item-inner-left{ width:75%; line-height:2.5rem; height:2.5rem; float:left;}
+.item-inner-left .item-title{ line-height:1.5rem; height:1.5rem; text-align:left; font-size:0.8rem; font-weight:200; color:#333;}
+.item-inner-left .item-text{ width:100%; display:block;}
+.item-text p.passenger_flow {width: 50%;height: 1rem;line-height: 1rem;font-size: 0.6rem;color: #999;float: left;}
+.item-text p.open_singular{width: 50%;height: 1rem;line-height: 1rem;font-size: 0.6rem;color: #999;float: left;}
+.item-inner-left .item-text span.icon{width:0.8rem; height:1rem; line-height:1rem;float:left; margin-right:0.1rem; padding:0;}
+.item-inner-left .item-text p.employee{ width:20%; height:1rem; line-height:1rem; font-size:0.6rem; color:#999;float:left;}
+.item-inner-left .item-text p.passengers{ width:20%; height:1rem; line-height:1rem; font-size:0.6rem; color:#999;float:left;}
+.item-inner-left .item-text p.time{width:40%;height:1rem; line-height:1rem; font-size:0.6rem; color:#999;float:left;}
+.item-inner-right{ width:25%; color:#fa6060;line-height:2.5rem; height:2.5rem; text-align:right; float:right;}

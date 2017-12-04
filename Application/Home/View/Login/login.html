@@ -47,7 +47,7 @@
 				layers('密码不能为空哦！');
 				return false;
 			}
-			var url = '';
+			var url = '__ROOT__/Home/Login/login';
 			var data = {};
 			data['phone'] = $('input[name=phone]').val();
 			data['pwd'] = $('input[name=pwd]').val();

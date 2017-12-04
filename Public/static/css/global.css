@@ -16,7 +16,7 @@ input{outline: none;}
 
 
 /*底部按钮*/
-#toolBar{background-color: #f8f8f8;width: 100%;border-top: 1px solid #ccc;position: absolute;bottom: 0;}
+#toolBar{background-color: #f8f8f8;width: 100%;border-top: 1px solid #ccc;position:fixed;bottom: 0;z-index: 9999;}
 #toolBar ul{overflow: hidden;}
 #toolBar ul li{width: 33.33%;margin: 0.5rem 0;float: left;text-align: center;}
 #toolBar ul li a img{height: 2rem;}

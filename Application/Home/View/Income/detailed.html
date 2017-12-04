@@ -2,196 +2,121 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>单个门店营收详细数据统计</title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-<link rel="stylesheet" href="__PUBLIC__/static/css/sm.min.css" />
-<link rel="stylesheet" href="__PUBLIC__/static/css/sm-extend.min.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/css/global_c.css" />
-
+    <meta content="initial-scale=1, maximum-scale=1.2, user-scalable=0" name="viewport" />
+		<link rel="stylesheet" href="__PUBLIC__/static/css/global.css" />
+		<link rel="stylesheet" href="__PUBLIC__/static/css/detaileds.css" />
 </head>
-
-<body style="overflow:hidden;">
-
-   <div class="page-group">
-      <div class="page page-current">
-         <header class="bar bar-nav">
-            <button class="button button-link button-nav pull-left">
-               <span class="icon icon-left"></span>
-               返回
-            </button>
-            <h1 class="title">重庆渝中区大坪石油路店</h1>
-         </header>
-         
-         <div class="content"> 
-         <div id="details">
-            <div class="column">
-               <canvas id="a_canvas" width="500" height="150"></canvas>
-            </div>
-            <div class="row_01">
-               <div class="col-32">
-                  <h5>客流量</h5>
-                  <div class="number">559888</div>
-                  <div class="contrast">
-                     <p>同前一天&nbsp;&nbsp;6%&nbsp;&nbsp;<span id="rise">↑</span></p>
-                     <p>上周相比&nbsp;&nbsp;9%&nbsp;&nbsp;<span id="decline">↑</span></p>
-                  </div>
-               </div>
-               <div class="col-32">
-                  <h5>开单数</h5>
-                  <div class="number">188</div>
-                  <div class="contrast">
-                     <p>同前一天&nbsp;&nbsp;2%&nbsp;&nbsp;<span id="rise">↑</span></p>
-                     <p>上周相比&nbsp;&nbsp;8%&nbsp;&nbsp;<span id="decline">↑</span></p>
-                  </div>
-               </div>
-               <div class="col-32" style="margin-right:0;">
-                  <h5>营业额</h5>
-                  <div class="number">¥&nbsp;8888888</div>
-                  <div class="contrast">
-                     <p>同前一天&nbsp;&nbsp;3%&nbsp;&nbsp;<span id="rise">↑</span></p>
-                     <p>上周相比&nbsp;&nbsp;4%&nbsp;&nbsp;<span id="decline">↑</span></p>
-                  </div>
-               </div>
-            </div> 
-            
-            <ul class="menu">
-               <li>
-                  <a href="__ROOT__/index.php/Home/Income/monthly" class="menu-box">
-                     <h6>月报统计</h6>
-                     <p>Monthly statictics</p>
-                     <i class="iconfont"><img src="__PUBLIC__/static/img/monthly.png"/></i>
-                  </a>
-               </li>
-               <li>
-                  <a href="__ROOT__/index.php/Home/Income/daily" class="menu-box">
-                     <h6>日报统计</h6>
-                     <p>Daily statictics</p>
-                     <i class="iconfont"><img src="__PUBLIC__/static/img/daily.png"/></i>
-                  </a>
-               </li>
-               <!--<li>
-                  <a href="store.html" class="menu-box">
-                     <h6>门店统计</h6>
-                     <p>Store statictics</p>
-                     <i class="iconfont"><img src="images/store.png"/></i>
-                  </a>
-               </li>
-               <li>
-                  <a href="discussion.html" class="menu-box">
-                     <h6>员工统计</h6>
-                     <p>Employee statictics</p>
-                     <i class="iconfont"><img src="images/employee.png"/></i>
-                  </a>
-               </li>-->
-            </ul>
-         </div>
-      </div>
-      </div>
-   </div>
+<body>
+	<div class="title">重庆渝中区大坪石油路店</div>
+	<div class="column">
+		<div id="a_canvas" style="width:400px; height: 220px;"></div>
+	</div>
+	<!--内容-->
+	<div class="content">
+		<div class="count">
+			<ul>
+				<li>
+					<h5>客流量</h5>
+          <div class="number">559888</div>
+          <div class="contrast">
+             <p>同前一天&nbsp;&nbsp;6%&nbsp;&nbsp;<span id="rise">↑</span></p>
+             <p>上周相比&nbsp;&nbsp;9%&nbsp;&nbsp;<span id="decline">↑</span></p>
+          </div>
+				</li>
+				<li>
+					<h5>开单数</h5>
+          <div class="number">188</div>
+          <div class="contrast">
+             <p>同前一天&nbsp;&nbsp;2%&nbsp;&nbsp;<span id="rise">↑</span></p>
+             <p>上周相比&nbsp;&nbsp;8%&nbsp;&nbsp;<span id="decline">↑</span></p>
+          </div>
+				</li>
+				<li>
+					<h5>营业额</h5>
+          <div class="number">¥&nbsp;8888888</div>
+          <div class="contrast">
+             <p>同前一天&nbsp;&nbsp;3%&nbsp;&nbsp;<span id="rise">↑</span></p>
+             <p>上周相比&nbsp;&nbsp;4%&nbsp;&nbsp;<span id="decline">↑</span></p>
+          </div>
+				</li>
+			</ul>
+		</div>
+		<!--月数据与日数据-->
+		<div class="dailymonth">
+			<ul>
+				<li>
+					<a href="__ROOT__/index.php/Home/Income/monthly" class="menu-box">
+             <h6>月报统计</h6>
+             <p>Monthly statictics</p>
+             <i class="iconfont"><img src="__PUBLIC__/static/img/monthly.png"/></i>
+          </a>
+				</li>
+				<li>
+          <a href="__ROOT__/index.php/Home/Income/daily" class="menu-box">
+             <h6>日报统计</h6>
+             <p>Daily statictics</p>
+             <i class="iconfont"><img src="__PUBLIC__/static/img/daily.png"/></i>
+          </a>
+       	</li>
+			</ul>
+		</div>
+	</div>
    <include file='./Application/Home/View/Public/_footer.html' />
-<script type='text/javascript' charset='utf-8' src="__PUBLIC__/static/js/zepto.js"></script>
-<script type='text/javascript' charset='utf-8' src="__PUBLIC__/static/js/sm.js"></script>
-<script type='text/javascript' charset='utf-8' src="__PUBLIC__/static/js/sm-extend.js"></script> 
-<script>
-    (function (){
- 
-        window.addEventListener("load", function(){
- 
-          var data = [1000,1300,2000,3000,2000,2000,1000,1500,2000,5000,1000,1000];
-          var xinforma = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
- 
-          // 获取上下文
-          var a_canvas = document.getElementById('a_canvas');
-          var context = a_canvas.getContext("2d");
- 
- 
-          // 绘制背景
-          var gradient = context.createLinearGradient(0,0,0,300);
- 
- 
-         // gradient.addColorStop(0,"#e0e0e0");
-          //gradient.addColorStop(1,"#ffffff");
- 
- 
-          context.fillStyle = gradient;
- 
-          context.fillRect(0,0,a_canvas.width,a_canvas.height);
- 
-          var realheight = a_canvas.height-15;
-          var realwidth = a_canvas.width-40;
-          // 描绘边框
-          var grid_cols = data.length + 1;
-          var grid_rows = 4;
-          var cell_height = realheight / grid_rows;
-          var cell_width = realwidth / grid_cols;
-          context.lineWidth = 1;
-          context.strokeStyle = "#000";
- 
-          // 结束边框描绘
-          context.beginPath();
-          // 准备画横线
-          /*for(var row = 1; row <= grid_rows; row++){
-            var y = row * cell_height;
-            context.moveTo(0,y);
-            context.lineTo(a_canvas.width, y);
-          }*/
-          
-            //划横线
-            context.moveTo(0,realheight);
-            context.lineTo(realwidth,realheight);
-                
-             
-            //画竖线
-          context.moveTo(0,10);
-           context.lineTo(0,realheight);
-          context.lineWidth = 1;
-          context.strokeStyle = "#fff";
-          context.stroke();
-              
- 
-          var max_v =0;
-          
-          for(var i = 0; i<data.length; i++){
-            if (data[i] > max_v) { max_v =data[i]};
-          }
-          max_v = max_v * 1.1;
-          // 将数据换算为坐标
-          var points = [];
-          for( var i=0; i < data.length; i++){
-            var v= data[i];
-            var px = cell_width *　(i +1);
-            var py = realheight - realheight*(v / max_v);
-            //alert(py);
-            points.push({"x":px,"y":py});
-          }
- 
-          //绘制坐标图形
-          for(var i in points){
-            var p = points[i];
-            context.beginPath();
-            context.fillStyle="#fff";
-            context.fillRect(p.x,p.y,15,realheight-p.y);
-             
-            context.fill();
-          }
-          //添加文字
-          for(var i in points)
-          {  var p = points[i];
-            context.beginPath();
-            context.fillStyle="#333";
-            context.fillText(data[i], p.x - 5, p.y - 3);
-             context.fillText(xinforma[i],p.x - 2,realheight+13);
-             context.fillText('月份',realwidth,realheight+12);
-             context.fillText('月营收',0,10);
-              }
-        },false);
-      })();
-       
-</script>             
+<script type="text/javascript" src="__PUBLIC__/static/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/static/js/echarts.common.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/static/js/main.js" ></script>
+<script type="text/javascript">
+        //指定图标的配置和数据
+        var option = {
+            title : {
+				        text: '收益变化图',
+				        subtext: '单位：元',
+				        textStyle:{
+				        	color:'#fff'
+				        },
+				        subtextStyle:{
+				        	color:'#fff'
+				        }
+				    },
+//          legend:{
+//              data:['用户来源']
+//          },
+            xAxis:{
+//          		data:["1","2","3","4","5","6","7","8","9","10","11","12"]
+                data:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"]
+            },
+            yAxis:{
+
+            },
+            series:[{
+                name:'收益量',
+                type:'line',
+                data:[500,200,360,100,800,300,500,400,700,500,300,800],
+                itemStyle : {  
+                    normal : {  
+                        lineStyle:{  
+                            color:'#fff'  
+                        }  
+                    }  
+                }, 
+            }],
+            axisLabel :{  
+						    interval:0,
+						    rotate:40
+						},
+//						label: {normal: {
+//             show: true	//显示每个点的数据
+//         }},
+        };
+        //初始化echarts实例
+        var myChart = echarts.init(document.getElementById('a_canvas'));
+
+        //使用制定的配置项和数据显示图表
+        myChart.setOption(option);
+        
+				$("#toolBar ul li").eq(0).find('img').attr('src','__PUBLIC__/static/img/home_g.png');
+				$("#toolBar ul li").eq(2).find('img').attr('src','__PUBLIC__/static/img/doller_c.png');
+    </script>
 </body>
 </html>
