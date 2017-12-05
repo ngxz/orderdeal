@@ -5,24 +5,57 @@ use Home\Controller\PublicController;
 class OrderController extends PublicController{
     public function _initialize(){
         parent::_initialize();
+        $this->order_service = D('Order','Service');
     }
     /**
-     * 未发货/待处理订单
+     * 未发货订单
      */
-    public function ordersearch(){
-        $this->display();
+    public function orderunsend(){
+        $result = $this->order_service->orderlist('1');
+        //没有数据
+        if (!$result){
+            $data['status'] = 0;
+            $data['msg'] = $this->order_service->getError();
+            //$this->assign('data',$data)->display();
+            $this->ajaxReturn($data);
+            
+        }
+        //$this->assign('orderunsend',$result)->display();
+        $this->ajaxReturn($result);
     }
     /**
-     * 已完成订单
+     * 待收货订单
      */
-    public function orderfinish(){
-        $this->display();
+    public function orderuntake(){
+        $result = $this->order_service->orderlist('2');
+        //没有数据
+        if (!$result){
+            $data['status'] = 0;
+            $data['msg'] = $this->order_service->getError();
+            //$this->assign('data',$data)->display();
+            $this->ajaxReturn($data);
+        }
+        $this->ajaxReturn($result);
+        //$this->assign('orderunsend',$result)->display();
     }
     /**
-     * 失效的订单
+     * 未付款订单
      */
-    public function orderlose(){
-        $this->display();
+    public function orderunpay(){
+        if (IS_POST){
+            $result = $this->order_service->orderlist('0');
+            //没有数据
+            if (!$result){
+                $data['status'] = 0;
+                $data['msg'] = $this->order_service->getError();
+                //$this->assign('data',$data)->display();
+                $this->ajaxReturn($data);
+            }
+            //$this->assign('orderunsend',$result)->display();
+            $this->ajaxReturn($result);
+        }else {
+            $this->display();
+        }
     }
 }
 

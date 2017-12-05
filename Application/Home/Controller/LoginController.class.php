@@ -12,6 +12,15 @@ class LoginController extends Controller{
     public function login(){
         if (IS_POST){
             $result = $this->login_service->loginvali(I("post."));
+            $data = array();
+            if (!$result){
+                $data['status'] = -1;
+                $data['msg'] = $this->login_service->getError();
+                $this->ajaxReturn($data);
+            }
+            $data['status'] = 1;
+            $data['msg'] = '登录成功，跳转中...';
+            $this->ajaxReturn($data);
         }else {
             $this->display();
         }

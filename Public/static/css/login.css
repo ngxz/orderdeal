@@ -6,10 +6,13 @@ body{background-color: #f5f5fa;}
 
 /*表单*/
 .loginForm input{border: none;}
-.phoneBox{position: relative;}
-.pwdBox{position: relative;}
-.phoneBox img{height: 1.5em;position: absolute;left: 0.4rem;top: 0.6rem;}
-.pwdBox img{height: 1.5em;position: absolute;left: 0.4rem;top: 0.6rem;}
+.codeBox{position: relative;width: 100%;overflow: hidden;}
+.phoneBox{position: relative;width: 100%;overflow: hidden;}
+.pwdBox{position: relative;width: 100%;overflow: hidden;}
+.codeBox img{height: 1.15em;position: absolute;left: 0.6rem;top: 0.75rem;}
+.phoneBox img{height: 1.5em;position: absolute;left: 0.4rem;top: 0.7rem;}
+.pwdBox img{height: 1.55em;position: absolute;left: 0.4rem;top: 0.6rem;}
+.codeBox input{height: 2.8rem;width: 100%;padding-left: 3.5em;border-top:1px solid #c7c8ce;background-color:#fafafa;}
 .phoneBox input{height: 2.8rem;width: 100%;padding-left: 3.5em;border-top:1px solid #c7c8ce;background-color:#fafafa;}
 .pwdBox input{height: 2.8rem;width: 100%;padding-left: 3.5em;border-top:1px solid #c7c8ce;border-bottom:1px solid #c7c8ce;background-color:#fafafa;}
 

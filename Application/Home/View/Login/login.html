@@ -12,13 +12,17 @@
 		<div class="loginForm">
 			<div class="userIcon"><img src="__PUBLIC__/static/img/user_icon.jpg"/></div>
 			<form>
+				<div class="codeBox">
+					<img src="__PUBLIC__/static/img/code.png" />
+					<input type="text" class="code" name="code" placeholder="企业编号" />
+				</div>
 				<div class="phoneBox">
 					<img src="__PUBLIC__/static/img/user.png" />
-					<input type="text" class="phone" name="phone" placeholder="请输入手机号" />
+					<input type="text" class="phone" name="phone" placeholder="分配帐号" />
 				</div>
 				<div class="pwdBox">
 					<img src="__PUBLIC__/static/img/pwd.png" />
-					<input type="password" class="pwd" name="pwd" placeholder="请输入密码" />
+					<input type="password" class="pwd" name="pwd" placeholder="登录凭证" />
 				</div>
 				<div class="text">
 					<input class="left" type="checkbox" id="remeber" name="remeber" />
@@ -35,10 +39,18 @@
 	<script type="text/javascript" src="__PUBLIC__/static/js/main.js" ></script>
 	<script type="text/javascript" src="__PUBLIC__/static/js/layer.js" ></script>
 	<script type="text/javascript">
+		function load(){
+			window.location.href = '__ROOT__/Home/Index/home';
+		}
 		//提交
 		$("input[type=button]").bind('click',function(){
+			var code = $('input[name=code]').val();
 			var phone = $('input[name=phone]').val();
 			var pwd = $('input[name=pwd]').val();
+			if(!code){
+				layers('企业编号不能为空哦');
+				return false;
+			}
 			if(!phone){
 				layers('手机号不能为空哦');
 				return false;
@@ -49,10 +61,14 @@
 			}
 			var url = '__ROOT__/Home/Login/login';
 			var data = {};
+			data['code'] = $('input[name=code]').val();
 			data['phone'] = $('input[name=phone]').val();
 			data['pwd'] = $('input[name=pwd]').val();
 			$.post(url,data,function(ref){
-				layers(ref.message);
+				layers(ref.msg);
+				if(ref.status == 1){
+					setInterval('load()',1000);
+				}
 			},'json');
 		})
 	</script>

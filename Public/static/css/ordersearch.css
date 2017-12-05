@@ -5,18 +5,19 @@ body{background-color: #eee;}
 .navBox ul{overflow: hidden;}
 .navBox ul li{float: left;width: 33.1%;height: 3rem;text-align: center;line-height: 3rem;border-right: 1px solid #ccc;}
 .navBox ul li:last-child{border-right: none;}
-.active{border-bottom:2px solid red;}
+/*.active{border-bottom:2px solid red;}*/
 /*订单列表*/
 .orderList{margin: 0.5rem auto;height: 31rem;overflow: auto;}
 .orderList ul li{margin-top: 0.6rem;background-color: #fff;}
+.orderList ul li:last-child{margin-bottom: 1rem;}
 /*编号*/
 .order_no{width: 98%;margin: 0 auto;overflow: hidden;height: 2.5rem;line-height: 2.5rem;}
 .order_no .time{color: #999;}
 /*图片价格*/
 .order_img{margin: 0 auto;height: 6rem;overflow: hidden;background-color: #eee;}
 .order_img .img img{height:4.5rem ;margin-top: 1rem;margin-left: 1rem;margin-right: 0.4rem;}
-.order_img .name{float: right;margin-top: 1rem;width: 13rem;}
-.price{margin-top: 2rem;margin-right: 0.4rem;}
+.order_img .name{float: right;margin-top: 1rem;width: 12rem;}
+.price{margin-top: 2rem;margin-right: 0.3rem;}
 .price .price_old{color: #666;}
 .price .count{float: right;}
 /*买家信息*/
@@ -25,7 +26,7 @@ body{background-color: #eee;}
 /*地址*/
 .order_address{overflow: hidden;width: 98%;margin: 0 auto;height: 2.6rem;}
 .order_address img{height: 1.7rem;margin-top: 0.3rem;margin-right: 0.5rem;}
-.order_address .address{width: 20rem;height: 2.6rem;}
+.order_address .address{width: 20rem;height: 2.6rem;vertical-align: middle;line-height: 2.6rem;}
 /*电话*/
 .order_phone{overflow: hidden;width: 98%;margin: 0 auto;height: 2.5rem;line-height: 2.5rem;}
 .order_phone img{height: 1.6rem;margin-top: 0.3rem;margin-right: 0.5rem;}

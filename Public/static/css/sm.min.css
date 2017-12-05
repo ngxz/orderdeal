@@ -1,7 +1,7 @@
 html {
-	font-size:20px
+	/*font-size:24px*/
 }
-@media only screen and (min-width:400px) {
+/*@media only screen and (min-width:400px) {
 	html {
 		font-size:21.33px!important
 	}
@@ -15,11 +15,11 @@ html {
 	html {
 		font-size:25.6px!important
 	}
-}
+}*/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html {
-	font-family:sans-serif;
+	/*font-family:sans-serif;
 	-ms-text-size-adjust:100%;
-	-webkit-text-size-adjust:100%
+	-webkit-text-size-adjust:100%*/
 }
 body {
 	margin:0
@@ -169,7 +169,7 @@ body {
 	bottom:0;
 	left:0;
 	font-family:"Helvetica Neue",Helvetica,sans-serif;
-	font-size:.85rem;
+	/*font-size:.85rem;*/
 	line-height:1.5;
 	color:#3d4145;
 	background:#eee;
@@ -249,7 +249,7 @@ a:active {
 	height:100%;
 	padding:0 0.5rem;
 	margin:1.5rem auto 5rem;
-	color:#6d6d72;
+	/*color:#6d6d72;*/
 	overflow:scroll;
 }
 .content-block-title {
@@ -258,10 +258,10 @@ a:active {
 	margin:0;
 	white-space:nowrap;
 	text-overflow:ellipsis;
-	font-size:.7rem;
+	/*font-size:.7rem;*/
 	text-transform:uppercase;
 	line-height:1;
-	color:#6d6d72;
+	/*color:#6d6d72;*/
 	margin:1.75rem .75rem .5rem
 }
 .content-block-title+.card,.content-block-title+.content-block,.content-block-title+.list-block {
@@ -877,16 +877,16 @@ a:active {
 	width: 100%;
 	padding: 0;
 	margin: 0 -.5rem;
-	font-size: .8rem;
+	font-size: 1rem;
 	font-weight: 500;
-	line-height: 2.5rem;
+	line-height: 3rem;
 	color: #fff;
 	text-align: center;
 	white-space: nowrap;
-	height: 2.5rem;
-	background: #fa6060;
+	height: 3rem;
+	background: #eb6435;
 	text-align: center;
-	line-height: 2.5rem;
+	line-height: 3rem;
 	font-weight: normal;
 }
 
@@ -952,7 +952,7 @@ a:active {
 	height:.8rem;
 	min-width:.8rem;
 	padding:0 .2rem;
-	font-size:.6rem;
+	/*font-size:.6rem;*/
 	line-height:.8rem;
 	color:#fff;
 	vertical-align:top;
@@ -963,14 +963,14 @@ a:active {
 .bar-tab .tab-item .icon {
 	top:.05rem;
 	height:1.2rem;
-	font-size:1.2rem;
+	/*font-size:1.2rem;*/
 	line-height:1.2rem;
 	padding-top:0;
 	padding-bottom:0
 }
 .bar-tab .tab-item .icon~.tab-label {
 	display:block;
-	font-size:.55rem;
+	/*font-size:.55rem;*/
 	position:relative;
 	top:.15rem
 }
@@ -990,7 +990,7 @@ a:active {
 .bar .button-link {
 	top:0;
 	padding:0;
-	font-size:.8rem;
+	/*font-size:1rem;*/
 	line-height:2.5rem;
 	height:2.5rem;
 	color:#fff;
@@ -1001,7 +1001,7 @@ a:active {
 }
 .bar .button-block {
 	top:.35rem;
-	font-size:.8rem;
+	/*font-size:.8rem;*/
 	width:100%
 }
 .bar .button-nav.pull-left {
@@ -1020,7 +1020,7 @@ a:active {
 	position:relative;
 	z-index:20;
 	padding:.5rem .1rem;
-	font-size:1rem;
+	/*font-size:1rem;*/
 	line-height:1.2rem
 }
 .bar .button .icon {
@@ -1034,7 +1034,7 @@ a:active {
 	margin-left:-.25rem
 }
 .bar-footer .icon {
-	font-size:1.2rem;
+	/*font-size:1.2rem;*/
 	line-height:1.2rem
 }
 .bar input[type=search] {
@@ -1056,7 +1056,7 @@ a:active {
 }
 .list-block {
 	margin: 0 0 0.5rem 0;
-	font-size:.85rem
+	/*font-size:.85rem*/
 }
 .list-block ul {
 	background:none;
@@ -1416,11 +1416,11 @@ a:active {
 .list-block .list-block-label {
 	margin:.5rem 0 1.75rem;
 	padding:0 .75rem;
-	font-size:.7rem;
+	/*font-size:.7rem;*/
 	color:#5f646e
 }
 .list-block .item-subtitle {
-	font-size:.75rem;
+	/*font-size:.75rem;*/
 	position:relative;
 	overflow:hidden;
 	white-space:nowrap;
@@ -1919,7 +1919,7 @@ input[type=button].button,input[type=submit].button {
 	border-color:#0a8ddf
 }
 .button.button-big {
-	font-size:.85rem;
+	/*font-size:.85rem;*/
 	height:2.4rem;
 	line-height:2.3rem
 }
@@ -2120,10 +2120,10 @@ input[type=button].button,input[type=submit].button {
 }
 .buttons-tab .button {
 	color:#5f646e;
-	font-size:.7rem;
+	/*font-size:.7rem;*/
 	width:100%;
-	height:1.5rem;
-	line-height:1.5rem;
+	height:3rem;
+	line-height:3rem;
 	-webkit-box-flex:1;
 	-ms-flex:1;
 	border:0;
@@ -4351,8 +4351,14 @@ body.panel-closing .page {
 	color: #0894ec;
 }
 
-
-
+.content-block {
+	display:block;
+	width:100%;
+	height:100%;
+	padding:0 0rem;
+	margin:0 auto 5rem;
+	overflow:scroll;
+}
 
 
 
