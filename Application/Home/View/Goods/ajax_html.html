@@ -1,0 +1,17 @@
+<notempty name='data'>
+	<div style="text-align: center;">该类别中没有商品哦！</div>
+</notempty>
+<volist name='result' id='rs'>
+	<li>
+		<img class="left" src="{$rs.thumb}" />
+		<div class="left content">
+			<div class="goodsTitle">{$rs.goodname}</div>
+			<div class="price left">
+				<span>￥{$rs.price}</span>
+				<input type="hidden" name="id" value="{$rs.goodid}"/>
+				<input type="button" name="tokenOff" value="{$rs.is_ok}" />
+				<input type="button" name="editPrice" value="修改价格" />
+			</div>
+		</div>
+	</li>
+</volist>

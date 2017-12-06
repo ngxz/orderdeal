@@ -4,117 +4,93 @@
 		<meta charset="UTF-8">
 		<title>商品列表</title>
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1.2, user-scalable=0" name="viewport" />
+		<link rel="stylesheet" href="__PUBLIC__/static/css/sm.min.css" />
 		<link rel="stylesheet" href="__PUBLIC__/static/css/global.css" />
 		<link rel="stylesheet" href="__PUBLIC__/static/css/goodslist.css" />
 	</head>
 	<body>
-		<div class="title">商品管理</div>
-		<div class="navBox">
-			<ul>
-				<li class="active"><a href="#">数码产品</a></li>
-				<li><a href="#">家用电器</a></li>
-				<li><a href="#">服饰</a></li>
-				<li><a href="#">家用电器</a></li>
-				<li><a href="#">服饰</a></li>
-			</ul>
+		<header class="bar bar-nav">
+		  <div class='title'>商品列表</div>
+		</header>
+		<div class="tablist">
+			<div class="buttons-tab">
+				<volist name='category' id='ct'>
+					<a href="#{$ct.classid}" class="tab-link button">{$ct.classname}</a>
+				</volist>
+			</div>
 		</div>
-		<div class="goodsList">
-			<ul>
-				<li>
-					<img class="left" src="__PUBLIC__/static/img/photo14.jpg" />
-					<div class="left content">
-						<div class="goodsTitle">七彩虹iGame750Ti 烈焰战神U-Twin-2GD5参数</div>
-						<div class="price left">
-							<span>￥900.00</span>
-							<input type="hidden" name="id" value="666"/>
-							<input type="button" name="tokenOff" value="正常" />
-							<!--<input type="button" name="delete" value="删除" />-->
-							<input type="button" name="editPrice" value="修改价格" />
-						</div>
-						
-					</div>
-				</li>
-				<li>
-					<img class="left" src="__PUBLIC__/static/img/photo14.jpg" />
-					<div class="left content">
-						<div class="goodsTitle">七彩虹iGame750Ti 烈焰战神U-Twin-2GD5参数</div>
-						<div class="price left">
-							<span>￥900.00</span>
-							<input type="hidden" name="id" value="666"/>
-							<input type="button" name="tokenOff" value="正常" />
-							<!--<input type="button" name="delete" value="删除" />-->
-							<input type="button" name="editPrice" value="修改价格" />
-						</div>
-						
-					</div>
-				</li>
-				<li>
-					<img class="left" src="__PUBLIC__/static/img/photo14.jpg" />
-					<div class="left content">
-						<div class="goodsTitle">七彩虹iGame750Ti 烈焰战神U-Twin-2GD5参数</div>
-						<div class="price left">
-							<span>￥900.00</span>
-							<input type="hidden" name="id" value="666"/>
-							<input type="button" name="tokenOff" value="正常" />
-							<!--<input type="button" name="delete" value="删除" />-->
-							<input type="button" name="editPrice" value="修改价格" />
-						</div>
-						
-					</div>
-				</li>
-				<li>
-					<img class="left" src="__PUBLIC__/static/img/photo14.jpg" />
-					<div class="left content">
-						<div class="goodsTitle">七彩虹iGame750Ti 烈焰战神U-Twin-2GD5参数</div>
-						<div class="price left">
-							<span>￥900.00</span>
-							<input type="hidden" name="id" value="666"/>
-							<input type="button" name="tokenOff" value="正常" />
-							<!--<input type="button" name="delete" value="删除" />-->
-							<input type="button" name="editPrice" value="修改价格" />
-						</div>
-						
-					</div>
-				</li>
-				<li>
-					<img class="left" src="__PUBLIC__/static/img/photo14.jpg" />
-					<div class="left content">
-						<div class="goodsTitle">七彩虹iGame750Ti 烈焰战神U-Twin-2GD5参数</div>
-						<div class="price left">
-							<span>￥900.00</span>
-							<input type="hidden" name="id" value="666"/>
-							<input type="button" name="tokenOff" value="正常" />
-							<!--<input type="button" name="delete" value="删除" />-->
-							<input type="button" name="editPrice" value="修改价格" />
-						</div>
-						
-					</div>
-				</li>
-			</ul>
+		<div class="content">
+		  <div class="content-block">
+		    <div class="tabs">
+		      <volist name='category' id='ct'>
+		      	<div id="{$ct.classid}" class="tab">
+			        <div class="goodsList">
+			          <ul>
+			          	
+			          </ul>
+			        </div>
+			    </div>
+		      </volist>
+		    </div>
+		  </div>
 		</div>
 		<include file='./Application/Home/View/Public/_footer.html' />
 	</body>
 	<script type="text/javascript" src="__PUBLIC__/static/js/jquery-1.9.1.min.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/static/js/zepto.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/static/js/sm.js" ></script>
 	<script type="text/javascript" src="__PUBLIC__/static/js/main.js" ></script>
 	<script type="text/javascript" src="__PUBLIC__/static/js/layer.js" ></script>
 	<script type="text/javascript">
 		$(function(){
+			//默认第一个active
+			//$(".buttons-tab a").eq(0).addClass('active');
+			$(".buttons-tab a").eq(0).click();
 			//根绝分类数量设置宽度
-			var width = $(".navBox ul li").length;
-			$(".navBox ul").width((width*8.1)+'rem');
+			var width = $(".buttons-tab a").length;
+			$(".buttons-tab").width((width*8)+'rem');
+			
 		});
+		
+		//获取列表填充数据函数
+		function getlist(url,obj,id){
+			$.post(url,'123',function(ref){
+				$(obj).html(ref);
+			},'html');
+		}
+		//绑定事件，异步请求
+		//按类别查看列表
+		$("body").bind('click','',function(){
+			
+		});
+		$(".buttons-tab a").bind('click',function(){
+			//类别id
+			var id = $(this).attr('href');
+			id = id.replace('#','');
+			
+			var url='__ROOT__/Home/Goods/ajax_html';
+			var obj = $("#"+id+" .goodsList ul");
+			//发送请求
+			getlist(url,obj,id);
+		});
+		
+		//下架函数
+		function turnoff(){
+			alert();
+		}
+		
 		//下架
-		$("input[name=tokenOff]").bind('click',function(){
+		$("input[name=tokenOff]").bind("click",function(){
+			alert();
 			var status = $(this).val();
 			var id = $(this).parent().find('input[name=id]').val();
+			alert(id);
 			if(status == '正常'){
 				//异步修改
-				$(this).val('已下架');
-				$(this).css({'border':'1px solid #e20000','color':'#e20000'});
+				
 			}else{
 				//异步修改
-				$(this).val('正常');
-				$(this).css({'border':'1px solid green','color':'green'});
+				
 			}
 		});
 		//删除

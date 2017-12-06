@@ -4,16 +4,15 @@
 		<meta charset="UTF-8">
 		<title>订单列表</title>
 		<meta content="initial-scale=1, maximum-scale=1.2, user-scalable=0" name="viewport" />
-		
 		<link rel="stylesheet" href="__PUBLIC__/static/css/sm.min.css" />
 		<link rel="stylesheet" href="__PUBLIC__/static/css/global.css" />
 		<link rel="stylesheet" href="__PUBLIC__/static/css/ordersearch.css" />
 	</head>
 	<body>
 		<header class="bar bar-nav">
-		  <div class='title'>标签页</div>
+		  <div class='title'>订单列表</div>
 		</header>
-		<div class="content" style="margin-top: 3rem;">
+		<div class="content">
 		  <div class="buttons-tab">
 		    <a href="#tab1" class="tab-link active button">待收货</a>
 		    <a href="#tab2" class="tab-link button">未发货</a>
@@ -53,8 +52,12 @@
 	<script type="text/javascript" src="__PUBLIC__/static/js/main.js" ></script>
 	<!--<script type="text/javascript" src="__PUBLIC__/static/js/layer.js" ></script>-->
 	<script type="text/javascript">
+		//加载后显示第一个tab
+		$(function(){
+			$("a[href='#tab1']").click();
+		});
 		//获取列表填充数据函数
-		function getlist(url,obj){
+		function getlist(url,obj,rbutton){
 			$.post(url,function(ref){
 				if(ref.status == 0){
 					$(obj).html(' ');
@@ -72,7 +75,7 @@
 					$.each(v['goodlist'], function(i2,v2) {
 						_html += '<div class="order_img">';	
 						_html += '<div class="img left">';			
-						_html += '<img src="__PUBLIC__/static/img/user_icon.jpg" />';				
+						_html += '<img src="'+v2["thumb"]+'" />';				
 						_html += '<span class="name">'+v2["goods_name"]+'</span>';				
 						_html += '</div>';					
 						_html += '<div class="price right">';	
@@ -94,31 +97,37 @@
 					_html += '<div class="phone left">';	
 					_html += '<img class="left" src="__PUBLIC__/static/img/phone.png"/>';	
 					_html += '<span class="tell left">电话：'+v["mobile"]+' &nbsp;'+v["username"]+'</span>';					
-					_html += '</div>';		
-					_html += '<div class="right status"><input type="button" value="发货"/></div>';	
+					_html += '</div>';	
+					_html += '<div class="right status">'+rbutton+'</div>';	
 					_html += '</div></li>';					
 				});
 				$(obj).append(_html);
 			},'json');
 		}
 		//绑定事件，异步请求
+		//待收货
 		$("a[href='#tab1']").bind('click',function(){
-			var url='__ROOT__/Home/Order/orderunpay';
+			var url='__ROOT__/Home/Order/orderuntake';
 			var obj = $("#tab1 .orderList ul");
+			var rbutton = '';
 			//发送请求
-			getlist(url,obj);
+			getlist(url,obj,rbutton);
 		});
+		//未发货
 		$("a[href='#tab2']").bind('click',function(){
-			var url='__ROOT__/Home/Order/orderunpay';
+			var url='__ROOT__/Home/Order/orderunsend';
 			var obj = $("#tab2 .orderList ul");
+			var rbutton = '<input type="button" value="发货"/>';
 			//发送请求
-			getlist(url,obj);
+			getlist(url,obj,rbutton);
 		});
+		//未支付
 		$("a[href='#tab3']").bind('click',function(){
 			var url='__ROOT__/Home/Order/orderunpay';
 			var obj = $("#tab3 .orderList ul");
+			var rbutton = '';
 			//发送请求
-			getlist(url,obj);
+			getlist(url,obj,rbutton);
 		});
 	</script>
 </html>

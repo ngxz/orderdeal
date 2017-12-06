@@ -4,16 +4,25 @@
 .navBox ul{height: 2.9rem;width: 80rem;}
 .navBox ul li{display: inline-block;width: 7.75rem;height: 2.9rem;text-align: center;line-height: 3rem;border-right: 1px solid #ccc;}
 .navBox ul li:last-child{border-right: none;}
-.active{border-bottom:2px solid red;}
+/*.active{border-bottom:2px solid red;}*/
 /*商品列表*/
 .goodsList{overflow: hidden;height: 32rem;overflow: auto;}
 .goodsList ul li{overflow: hidden;height: 7rem;border-bottom: 1px solid #ccc;}
 .goodsList img{height: 5rem;margin:1rem;}
-.content{margin-top: 1rem;}
+.content{overflow: hidden;width: 100%;height: 35rem;}
+.content2{margin-top: 1rem;}
 .goodsTitle{margin-bottom: 1rem;width: 16rem;}
 .price{margin-right: 0.3rem;}
 /*按钮*/
-.content input{padding: 0.2rem 0.6rem;background-color: #fff;border-radius: 0.4rem;font-size: 0.8rem;}
-.content input[name=tokenOff]{border: 1px solid green;color: green;}
-.content input[name=delete]{border: 1px solid #E20000;color: #E20000;}
-.content input[name=editPrice]{border: 1px solid #E20000;color:#E20000;}
+.content2 input{padding: 0.2rem 0.6rem;margin-left: 1rem;background-color: #fff;border-radius: 0.4rem;font-size: 0.8rem;}
+.content2 input[name=tokenOff]{border: 1px solid green;color: green;}
+.content2 input[name=delete]{border: 1px solid #E20000;color: #E20000;}
+.content2 input[name=editPrice]{border: 1px solid #E20000;color:#E20000;}
+
+/*调整类别栏宽度*/
+.tablist{margin-top:3rem;height:;background-color: #fff;border-bottom: 1px solid #ccc;width: 100%;overflow-x: scroll;overflow-y: hidden;}
+.buttons-tab{width: 80rem;}
+.buttons-tab .button{display: inline-block;width: 7.75rem!important;}
+
+
+.content-block{background-color: #fff;}
