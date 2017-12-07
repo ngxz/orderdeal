@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单列表</title>
+		<meta content="initial-scale=1, maximum-scale=1.2, user-scalable=0" name="viewport" />
+		<link rel="stylesheet" href="__PUBLIC__/static/css/sm.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/static/css/global.css" />
+		<link rel="stylesheet" href="__PUBLIC__/static/css/ordersearch.css" />
+	</head>
+	<body>
+		<header class="bar bar-nav">
+		  <div class='title'>订单列表</div>
+		</header>
+		<div class="content">
+		  <div class="buttons-tab">
+		    <a href="#2" class="tab-link active button">待收货</a>
+		    <a href="#1" class="tab-link button">未发货</a>
+		    <a href="#0" class="tab-link button">未支付</a>
+		  </div>
+		  <div class="content-block">
+		    <div class="tabs">
+		      <div id="2" class="tab active">
+		        <div class="orderList">
+		          <ul>
+		          	
+		          </ul>
+		        </div>
+		      </div>
+		      <div id="1" class="tab">
+		        <div class="orderList">
+		          <ul>
+		          	
+		          </ul>
+		        </div>
+		      </div>
+		      <div id="0" class="tab">
+		        <div class="orderList">
+		          <ul>
+		          	
+		          </ul>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<include file='./Application/Home/View/Public/_footer.html' />
+	</body>
+	<script type="text/javascript" src="__PUBLIC__/static/js/jquery-1.9.1.min.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/static/js/zepto.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/static/js/sm.js" ></script>
+	<script type="text/javascript" src="__PUBLIC__/static/js/main.js" ></script>
+	<!--<script type="text/javascript" src="__PUBLIC__/static/js/layer.js" ></script>-->
+	<script type="text/javascript">
+		//加载后显示第一个tab
+		$(function(){
+			$(".buttons-tab a").eq(0).click();
+		});
+		//绑定事件，异步请求
+		$(".buttons-tab a").bind('click',function(){
+			var url = '__ROOT__/Home/Order/ajax_html';
+			//类别id
+			var id = $(this).attr('href');
+			id = id.replace('#','');
+			
+			var obj = $("#"+id+" .orderList ul");
+			$.post(url,{'id':id},function(ref){
+				$(obj).html(ref);
+			},'html');
+		});
+	</script>
+</html>

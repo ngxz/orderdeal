@@ -13,7 +13,7 @@ class OrderService{
      */
     public function orderlist($param){
         $data = array();
-        $data['status'] = $param;
+        $data['status'] = $param['id'];
         $file = file_get_contents("./token.json",true);
         $result = json_decode($file,true);
         $token = $result['token'];

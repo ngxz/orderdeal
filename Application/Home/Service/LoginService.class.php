@@ -1,7 +1,6 @@
 <?php
 namespace Home\Service;
 
-use Home\Controller\PublicController;
 class LoginService{
     public $error = '';
     public function __construct(){
@@ -31,7 +30,6 @@ class LoginService{
         $data['password'] = $params['pwd'];
         $data['clienttype'] = 4;
         $url = $this->url;
-        
         //获取数据
         $result = $this->http->postRequest($url,$data);
         $result = json_decode($result,true);

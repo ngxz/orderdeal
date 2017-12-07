@@ -1,15 +1,19 @@
 <notempty name='data'>
-	<div style="text-align: center;">该类别中没有商品哦！</div>
+	<div style="text-align: center;">{$data.msg}</div>
 </notempty>
 <volist name='result' id='rs'>
 	<li>
 		<img class="left" src="{$rs.thumb}" />
-		<div class="left content">
+		<div class="left content2">
 			<div class="goodsTitle">{$rs.goodname}</div>
-			<div class="price left">
-				<span>￥{$rs.price}</span>
+			<div class="price right">
+				<div style="display: inline;">￥<span id="{$rs.goodid}">{$rs.price}</span></div>
 				<input type="hidden" name="id" value="{$rs.goodid}"/>
-				<input type="button" name="tokenOff" value="{$rs.is_ok}" />
+				<if condition='$rs.is_ok eq 1'>
+					<input type="button" style="border:1px solid green;color:green" name="tokenOff" value="正常" />
+					<else />
+					<input type="button" style="border:1px solid red;color:red" name="tokenOff" value="已下架" />
+				</if>
 				<input type="button" name="editPrice" value="修改价格" />
 			</div>
 		</div>

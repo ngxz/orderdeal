@@ -1,6 +1,8 @@
 .logoBox{height: 20rem;background-color: #EB6435;}
-.logo{text-align: center;}
-.logo img{height: 8rem;margin: 4.5rem auto;}
+.logo{text-align: center;padding: 3.2rem 0;}
+.icon{height: 10rem;width: 10rem;margin: 0 auto;text-align: center;border-radius: 5rem;background-color: #fff;border: none;border: 1px solid darkgray;}
+.icon{background-image: url(../img/logo2.png);background-position: center;background-size:160% 85%;}
+.logo img{height: 8rem;}
 
 .searchForm form{position: relative;text-align: center;}
 .searchForm img{height: 1.4rem;color: #C2C2C2;position: absolute;left: 1.6rem;top: 0.3rem;}

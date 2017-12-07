@@ -1,8 +1,10 @@
 body{background-color: #f5f5fa;}
 /*顶部和头像*/
 .title{height: 3rem;color: #fff;background-color: #eb6435;text-align: center;line-height:3rem;}
-.userIcon{height: 10rem;text-align: center;}
-.userIcon img{height: 6rem;border-radius: 3rem;margin-top: 2.5rem;}
+.userIcon{height: 10rem;text-align: center;padding-top: 1.5rem;}
+.icon{height: 8rem;width: 8rem;margin: 0 auto;text-align: center;background-color: #fff;border-radius: 4rem;border: none;border: 1px solid darkgray;}
+.icon{background-image: url(../img/logo2.png);background-position: center;background-size:160% 85%;}
+.userIcon img{height: 6rem;border-radius: 3rem;}
 
 /*表单*/
 .loginForm input{border: none;}

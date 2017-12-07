@@ -8,62 +8,25 @@ class OrderController extends PublicController{
         $this->order_service = D('Order','Service');
     }
     /**
-     * 未发货订单
+     * 渲染订单列表html
+     * 根据参数选择类型
      */
-    public function orderunsend(){
-        if(IS_POST){
-            $result = $this->order_service->orderlist('1');
-            //没有数据
-            if (!$result){
-                $data['status'] = 0;
-                $data['msg'] = $this->order_service->getError();
-                //$this->assign('data',$data)->display();
-                $this->ajaxReturn($data);
-            
-            }
-            //$this->assign('orderunsend',$result)->display();
-            $this->ajaxReturn($result);
-        }else {
-            $this->display();
+    public function ajax_html(){
+        $result = $this->order_service->orderlist(I('post.'));
+        //没有数据
+        if (!$result){
+            $data['status'] = 0;
+            $data['msg'] = $this->order_service->getError();
+            $this->assign('data',$data)->display();
+            exit();
         }
+        $this->assign('orderlist',$result)->display();
     }
     /**
-     * 待收货订单
+     * 订单列表页面
      */
-    public function orderuntake(){
-        if (IS_POST){
-            $result = $this->order_service->orderlist('2');
-            //没有数据
-            if (!$result){
-                $data['status'] = 0;
-                $data['msg'] = $this->order_service->getError();
-                //$this->assign('data',$data)->display();
-                $this->ajaxReturn($data);
-            }
-            $this->ajaxReturn($result);
-            //$this->assign('orderunsend',$result)->display();
-        }else {
-            $this->display();
-        }
-    }
-    /**
-     * 未付款订单
-     */
-    public function orderunpay(){
-        if (IS_POST){
-            $result = $this->order_service->orderlist('0');
-            //没有数据
-            if (!$result){
-                $data['status'] = 0;
-                $data['msg'] = $this->order_service->getError();
-                //$this->assign('data',$data)->display();
-                $this->ajaxReturn($data);
-            }
-            //$this->assign('orderunsend',$result)->display();
-            $this->ajaxReturn($result);
-        }else {
-            $this->display();
-        }
+    public function orderlist(){
+        $this->display();
     }
 }
 

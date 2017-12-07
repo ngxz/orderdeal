@@ -9,18 +9,22 @@
 	</head>
 	<body>
 		<div class="logoBox">
-			<div class="logo"><img src="__PUBLIC__/static/img/user_icon.jpg"></div>
+			<div class="logo">
+				<div class="icon">
+					<!--<img src="__PUBLIC__/static/img/logo2.png">-->
+				</div>
+			</div>
 			<div class="searchForm">
 				<form>
 					<img src="__PUBLIC__/static/img/search.png" />
-					<input type="text" name="search" placeholder="输入日期直接查询" value="" />
+					<input type="text" name="search" placeholder="输入订单号查询" value="" />
 				</form>
 			</div>
 		</div>
 		<div class="menusBox">
 			<ul>
 				<li>
-					<a href="__ROOT__/Home/Order/orderunpay" class="orderSearch">
+					<a href="__ROOT__/Home/Order/orderlist" class="orderSearch">
 						<img src="__PUBLIC__/static/img/order_sear.png" />
 						<span>订单列表</span>
 					</a>
@@ -47,7 +51,7 @@
 	<script type="text/javascript">
 		$("input[name=search]").change(function(){
 			var val = $(this).val();
-			alert(val);
+			
 			//提交搜索
 			
 		});

@@ -1,0 +1,51 @@
+<?php 
+	$sqlmap =  I('post.');
+?>
+<!--订单为空-->
+<notempty name='data'>
+	{$data.msg}
+</notempty>
+<!--订单列表-->
+<volist name='orderlist' id='us'>
+	<li>
+		<div class="order_no">
+			<span class="no left">订单号：{$us.ordersn}</span>
+			<!--<span class="time right">2017.12.01 09:00</span>-->
+		</div>
+		<!--商品-->
+		<volist name="us['goodlist']" id='gl'>
+			<div class="order_img">
+				<div class="img left">
+					<img src="{$gl.thumb}" />
+					<span class="name">{$gl.goods_name}</span>
+				</div>
+				
+				<div class="price right">
+					<div class="price_now">￥{$gl.member_goods_price}</div>
+					<div class="price_old"><s>￥{$gl.market_price}</s></div>
+					<div class="count">x{$gl.goods_num}</div>
+				</div>
+			</div>
+		</volist>
+		<div class="order_customer">
+			<div class="count2"> &nbsp;<span class="price_all"> 共{$us.totalnumbers}件商品 &nbsp;合计：￥{$us.totalprice}（含运费：￥<span class="kuaidi">0.00</span>）</span></div>
+		</div>
+		<div class="order_address">
+			<img class="left" src="__PUBLIC__/static/img/location.png" />
+			<span class="left address">地址：{$us.address}</span>
+		</div>
+		<div class="order_phone">
+			<div class="phone left">
+				<img class="left" src="__PUBLIC__/static/img/phone.png"/>
+				<span class="tell left">电话： {$us.mobile} &nbsp;{$us.username}</span>
+			</div>
+			<div class="right status">
+				<if condition='$sqlmap.id eq 1'>
+					<input type="button" value="发货"/>
+				<elseif condition='$sqlmap.id eq 2'/>
+				<else/>
+				</if>
+			</div>
+		</div>
+	</li>
+</volist>

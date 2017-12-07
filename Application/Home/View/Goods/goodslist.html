@@ -42,27 +42,13 @@
 	<script type="text/javascript" src="__PUBLIC__/static/js/main.js" ></script>
 	<script type="text/javascript" src="__PUBLIC__/static/js/layer.js" ></script>
 	<script type="text/javascript">
-		$(function(){
-			//默认第一个active
-			//$(".buttons-tab a").eq(0).addClass('active');
-			$(".buttons-tab a").eq(0).click();
-			//根绝分类数量设置宽度
-			var width = $(".buttons-tab a").length;
-			$(".buttons-tab").width((width*8)+'rem');
-			
-		});
-		
 		//获取列表填充数据函数
 		function getlist(url,obj,id){
-			$.post(url,'123',function(ref){
+			$.post(url,{'category':id},function(ref){
 				$(obj).html(ref);
 			},'html');
 		}
-		//绑定事件，异步请求
-		//按类别查看列表
-		$("body").bind('click','',function(){
-			
-		});
+		//绑定事件，异步请求类别下的列表
 		$(".buttons-tab a").bind('click',function(){
 			//类别id
 			var id = $(this).attr('href');
@@ -75,54 +61,85 @@
 		});
 		
 		//下架函数
-		function turnoff(){
-			alert();
-		}
-		
-		//下架
-		$("input[name=tokenOff]").bind("click",function(){
-			alert();
-			var status = $(this).val();
-			var id = $(this).parent().find('input[name=id]').val();
-			alert(id);
-			if(status == '正常'){
-				//异步修改
-				
+		$('body').on('click','input[name=tokenOff]',function(){
+			var obj = $(this);
+			var url = '__ROOT__/Home/Goods/grounding'
+			var data = {};
+			data['id'] = $(this).parent().find('input[name=id]').val();
+			if($(this).val() == '正常'){
+				data['is_ok'] = 0;
+				$.post(url,data,function(ref){
+				if(ref.status == 1){
+						$(obj).val('已下架');
+						$(obj).css({'border':'solid 1px red','color':'red'});
+					};
+				},'json');
 			}else{
-				//异步修改
-				
+				data['is_ok'] = 1;
+				$.post(url,data,function(ref){
+					if(ref.status == 1){
+						$(obj).val('正常');
+						$(obj).css({'border':'solid 1px green','color':'green'});
+					}else{
+						layers(ref.msg);
+					}
+				},'json');
 			}
+			
 		});
-		//删除
-		$("input[name=delete]").bind('click',function(){
-			layer.open({
-			    content: '您确定要删除该商品吗？'
-			    ,btn: ['删除', '取消']
-			    ,yes: function(index){
-			      	var id = $(this).parent().find('input[name=id]').val();
-					//异步修改
-					layers('已经删除');
-			    }
-			});
-		});
+		
 		//修改价格弹出
-		$("input[name=editPrice]").bind('click',function(){
+		$("body").on('click','input[name=editPrice]',function(){
 			var id = $(this).parent().find('input[name=id]').val();
 			//弹出
 			layer.open({
 			    title: [
 			      '修改价格',
-			      'background-color: #eb6435; color:#fff;'
+			      'height:40px;line-height:40px;background-color: #eb6435; color:#fff;'
 			    ],
-			    content: "<input type=text style='height:2rem;width:16rem;background-color: #fff;border:1px solid #ccc;border-radius: 0.4rem;font-size: 0.8rem;' name='newPrice'/><br/>"+
-			    "<input style='border: 1px solid green;color: green;padding: 0.2rem 0.6rem;background-color: #fff;border-radius: 0.4rem;font-size: 0.8rem;margin-top:2rem' onclick='sendPrice("+id+")' type=button value='确认'/>"
+			    content: "<input type=text style='height:2rem;width:95%;background-color: #fff;border:1px solid #ccc;border-radius: 0.4rem;font-size: 0.8rem;padding-left:0.5rem' name='newPrice'/><br/>"+
+			    "<input style='border: 1px solid green;color: green;padding: 0.5rem 1rem;background-color: #fff;border-radius: 0.4rem;font-size: 0.8rem;margin-top:2rem' onclick='sendprice("+id+")' type=button value='确认'/>"
 			});
 		});
 		//修改价格
-		function sendPrice(id){
-			var newPrice = $("input[name=newPrice]").val();
+		function sendprice(id){
+			var newprice = $("input[name=newPrice]").val();
+			if(!newprice){
+				layers('请输入新价格哦');
+				return false;
+			}
 			//异步修改
-			layers(newPrice);
+			var url = '__ROOT__/Home/Goods/editprice';
+			var data ={};
+			data['id'] = id;
+			data['newprice'] = newprice;
+			$.post(url,data,function(ref){
+				if(ref.status == 1){
+					layer.close(layer.open());
+					if(!/\./.test(newprice)){
+						newprice += '.00';
+					}	
+					$("#"+id).text(newprice);
+				}else{
+					layers(ref.msg);
+				}
+			},'json');
 		}
+		//页面加载完成执行
+		$(function(){
+			//根绝分类数量设置宽度
+			var width = $(".buttons-tab a").length;
+			$(".buttons-tab").width((width*8)+'rem');
+			
+			//默认第一个active
+			$(".buttons-tab a").eq(0).addClass('active');
+			//第一个类别的id
+			var id = $(".buttons-tab a").eq(0).attr('href');
+			id = id.replace('#','');
+			var url='__ROOT__/Home/Goods/ajax_html';
+			var obj = $("#"+id+" .goodsList ul");
+			$(".tabs .tab").eq(0).addClass('active');
+			getlist(url,obj,id);
+		});
 	</script>
 </html>

@@ -25,12 +25,37 @@ class GoodsController extends PublicController{
             $data['status'] = 0;
             $data['msg'] = $this->goods_service->getError();
             $this->assign('data',$data)->display();
+            exit();
         }
         $this->assign('result',$result)->display();
     }
-    
+    /**
+     * 上下架
+     */
     public function grounding(){
-        
+        $result = $this->goods_service->grounding(I('post.'));
+        $data = array();
+        if(!$result){
+            $data['status'] = 0;
+            $data['msg'] = $this->goods_service->getError();
+        }else {
+            $data['status'] = 1;
+        }
+        $this->ajaxReturn($data);
+    }
+    /**
+     * 修改商品价格
+     */
+    public function editprice(){
+        $result = $this->goods_service->editprice(I('post.'));
+        $data = array();
+        if(!$result){
+            $data['status'] = 0;
+            $data['msg'] = $this->goods_service->getError();
+        }else {
+            $data['status'] = 1;
+        }
+        $this->ajaxReturn($data);
     }
 }
 
