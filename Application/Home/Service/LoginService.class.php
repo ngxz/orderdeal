@@ -27,7 +27,7 @@ class LoginService{
         //参数
         $data['comcode'] = $params['code'];
         $data['loginid'] = $params['phone'];
-        $data['password'] = $params['pwd'];
+        $data['password'] = md5($params['pwd']);
         $data['clienttype'] = 4;
         $url = $this->url;
         //获取数据

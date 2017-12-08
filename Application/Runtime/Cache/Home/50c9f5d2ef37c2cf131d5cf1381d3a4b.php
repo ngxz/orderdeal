@@ -10,7 +10,11 @@
 	<body>
 		<div class="title">登录页</div>
 		<div class="loginForm">
-			<div class="userIcon"><img src="/orderDeal/Public/static/img/user_icon.jpg"/></div>
+			<div class="userIcon">
+				<div class="icon">
+					<!--<img src="/orderDeal/Public/static/img/logo2.png"/>-->
+				</div>
+			</div>
 			<form>
 				<div class="codeBox">
 					<img src="/orderDeal/Public/static/img/code.png" />

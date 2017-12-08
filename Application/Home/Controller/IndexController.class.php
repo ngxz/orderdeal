@@ -5,6 +5,9 @@ class IndexController extends PublicController {
     public function _initialize(){
         parent::_initialize();
     }
+    public function index(){
+        
+    }
     /**
      * 登录后进入的首页
      */
